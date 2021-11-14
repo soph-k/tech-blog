@@ -9,23 +9,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ColeEnyart/tech-blog.git"
+    "url": "git+https://github.com/soph-k/tech-blog.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ColeEnyart/tech-blog/issues"
+    "url": "https://github.com/soph-k/tech-blog/issues"
   },
-  "homepage": "https://github.com/ColeEnyart/tech-blog#readme",
+  "homepage": "https://github.com/soph-k/tech-blog#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.2",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "express-handlebars": "^5.3.4",
+    "express-handlebars": "^6.0.1",
     "express-session": "^1.17.2",
-    "mysql2": "^2.3.2",
-    "sequelize": "^6.8.0"
-  },
-  "devDependencies": {}
+    "mysql2": "^2.3.3-rc.0",
+    "sequelize": "^6.9.0"
+  }
 }
