@@ -1,22 +1,29 @@
+// Require Express
 const router = require('express').Router();
-const { Post, Comment, User } = require('../models/');
 
-// get all posts for homepage
+//Require Models
+const { Post, Comment, User } = require('../models');
+
+// Routes
+// Get all exisiting posts for homepage
 router.get('/', async (req, res) => {
   try {
     const postData = await Post.findAll({
       include: [User],
     });
 
+    // Serializes data so the template can read it
     const posts = postData.map((post) => post.get({ plain: true }));
 
-    res.render('get-posts', { posts });
+    // Passes serialized data and session flag into handlebar template
+    res.render('viewPosts', { posts });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// get single post
+
+// Get a single post
 router.get('/post/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
@@ -32,7 +39,7 @@ router.get('/post/:id', async (req, res) => {
     if (postData) {
       const post = postData.get({ plain: true });
 
-      res.render('one-post', { post });
+      res.render('singlePost', { post });
     } else {
       res.status(404).end();
     }

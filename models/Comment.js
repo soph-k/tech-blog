@@ -1,6 +1,8 @@
+///////////////////////// Packages /////////////////////////
 const { Sequelize, Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+//Create Comment model
 class Comment extends Model {}
 
 Comment.init(
@@ -15,4 +17,5 @@ Comment.init(
   }
 );
 
+// Export to make available
 module.exports = Comment;

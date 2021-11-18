@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post } = require('../models/');
+const { Post } = require('../models');
 const withAuth = require('../utils/auth');
 
 // get all posts for homepage
@@ -13,7 +13,7 @@ router.get('/', withAuth, async (req, res) => {
 
     const posts = postData.map((post) => post.get({ plain: true }));
 
-    res.render('get-posts-loggedin', {
+    res.render('adminPost', {
       layout: 'dashboard',
       posts,
     });
@@ -24,7 +24,7 @@ router.get('/', withAuth, async (req, res) => {
 
 // get new post
 router.get('/new', withAuth, (req, res) => {
-  res.render('put-post', {
+  res.render('updatePost', {
     layout: 'dashboard',
   });
 });
@@ -37,7 +37,7 @@ router.get('/edit/:id', withAuth, async (req, res) => {
     if (postData) {
       const post = postData.get({ plain: true });
 
-      res.render('edit-post', {
+      res.render('editPost', {
         layout: 'dashboard',
         post,
       });

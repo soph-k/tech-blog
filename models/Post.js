@@ -1,6 +1,8 @@
+///////////////////////// Packages /////////////////////////
 const { Sequelize, Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+// create Post model
 class Post extends Model {}
 
 Post.init(
@@ -13,4 +15,5 @@ Post.init(
   }
 );
 
+// Export to make available
 module.exports = Post;

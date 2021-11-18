@@ -1,22 +1,90 @@
-:root {
-  --primary: #8383b3;
-  --secondary: #42c09c;
-  --tertiary: #ff4ae1;
-  --light-dark: #7e00af;
-  --dark: #29201d;
-  --border-radius: 0.3rem;
+
+/********************************************************************************
+CSS TABLE OF CONTENTS
+===== Base ====
+    |-- 1.0 - Reset
+    |-- 2.0 - Gobal
+    |-- 3.0 - Scroll
+    |-- 4.0 - Navbar
+    |-- 5.0 - Body
+    |-- 6.0 - Footer
+********************************************************************************/
+
+/********************************** 1.0 - Reset ********************************/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
 }
 
-* {
-  box-sizing: border-box;
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
 }
 
 body {
-  background-color: var(--primary);
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/***************************** 2.0 - Global ******************************/
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+* {
+  box-sizing: border-box;
+  color: #000000;
+}
+
+html,
+body {
+  background-color: #f6f0ed;
   margin: 0;
   padding: 0;
-  font-family: "IBM Plex Sans", sans-serif;
-  color: var(--dark);
+  font-family:'Quicksand',sans-serif;
+  color: #000000;
   line-height: 1.5;
   font-size: 16px;
 }
@@ -27,47 +95,102 @@ h3,
 h4,
 h5,
 h6 {
+  color: #000000;
   font-weight: 700;
   margin: 0;
-  color: var(--dark);
   line-height: 1.25;
 }
 
-h2 a:visited {
-  color: var(--tertiary);
+a {
+  text-decoration: none;
+  color: black
 }
 
-h2 a {
-  color: var(--primary);
+
+/****************************** 3.0 - Scroll **************************/
+::-webkit-scrollbar {
+  width: .6em;
+  height: 2px;
 }
 
-header {
-  margin-top: 50px;
+::-webkit-scrollbar-thumb {
+  background: #ea1d6f;
+  border: 3px none #ffffff;
+  border-radius: 10px;
 }
+
+::-webkit-scrollbar-thumb:active {
+  background: #525965;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+  background: transparent;
+}
+::-webkit-scrollbar-track:active {
+  background: transparent;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+
+/****************************** 4.0 - Navbar **************************/
+.navbar {
+  display: flex;
+  width: 100%;
+  position: fixed;
+  background-image:linear-gradient(to top, rgb(255, 255, 255) , rgb(95, 110, 114));
+  justify-content: space-around;
+  border-bottom: 1px solid black;
+}
+
+.nav-item {
+  margin: 0 40px;
+  padding: 1em;
+}
+
+.hero {
+  text-align: center;
+  margin-top: 3em;
+  padding: 3% 4%;
+  background-image:linear-gradient(to bottom, rgb(255, 255, 255) , rgb(95, 110, 114));
+  font-weight: 100;
+}
+
+
+.app-title {
+  font-weight: 100;
+  font-size: 3rem;
+  padding: 0 10px;
+  display: inline-block;
+  border-radius: var(--border-radius);
+}
+
 
 main {
   margin: 20px auto;
   width: 94%;
 }
 
-a {
-  text-decoration: none;
-}
 
 p {
   font-size: 1.2rem;
 }
 
 input {
-    width: 100%;
     border: 1px solid #ccc;
     background: #FFF;
+    width: 100%;
     margin: 0 0 5px;
     padding: 10px;
 }
 
 .card-header h2 {
-  color: var(--primary);
+  color: #f6f0ed;
 }
 
 .btn {
@@ -76,21 +199,20 @@ input {
   padding: 6px 5px;
   width: 100%;
   display: block;
-  margin: 5px 0;
+  margin: 15px 0;
   border-radius: var(--border-radius);
-  color: var(--primary);
   border: none;
   outline: none;
-  background-color: var(--light-dark);
-  box-shadow: 3px 3px var(--dark);
+  background-color: #bdc6ca;
+  box-shadow: 3px 3px #4a4e50;
   transform: translate(-1px, -1px);
 }
 
 .btn:hover {
-  color: var(--primary);
-  background-color: var(--tertiary);
+  color: #f6f0ed;
+  background-color: #979190;
   transform: translate(0, 0);
-  box-shadow: 2px 2px var(--dark);
+  box-shadow: 2px 2px #28536b;
 }
 
 .btn-inline {
@@ -101,43 +223,8 @@ input {
   display: inline;
 }
 
-.navbar {
-  width: 100%;
-  position: fixed;
-  background-color: var(--dark);
-}
 
-.nav-item {
-  margin: 0 40px;
-}
-
-.nav-item a {
-  color: var(--primary);
-}
-
-.hero {
-  padding: 3% 4%;
-  background-color: var(--dark);
-  color: var(--primary);
-}
-
-.hero p {
-  max-width: 75%;
-}
-
-.app-title {
-  font-size: 3rem;
-  background-color: var(--primary);
-  color: var(--dark);
-  padding: 0 10px;
-  display: inline-block;
-  border-radius: var(--border-radius);
-}
-
-.app-title a {
-  color: var(--dark);
-}
-
+/****************************** 5.0 - Body **************************/
 .list-group {
   padding: 1%;
 }
@@ -145,49 +232,39 @@ input {
 .list-item {
   margin-bottom: 10px;
   padding: 1.5%;
-  border-radius: var(--border-radius);
-  background-color: var(--light-dark);
-  color: var(--primary);
+  background-image:linear-gradient(to bottom, rgb(255, 255, 255) , rgb(95, 110, 114));
+  color: #f6f0ed;
   text-decoration: none;
+  border-radius:10px;
+  border:1px solid black;
 }
 
 .list-item:hover {
-  background-color: var(--dark);
+  border-color: white 3px solid;
 }
 
-.footer a {
-  display: inline-block;
-  padding: 1em;
-  margin-bottom: .5em;
-  background-color: var(--dark);
-  color: var(--primary);
-  border-radius: var(--border-radius);
-  text-decoration: none;
-}
-
-/* CARDS */
 .card {
   margin: 0 0 20px 0;
-  border: 3px solid var(--dark);
-  border-radius: var(--border-radius);
+  border: 3px solid #000000;
+  border-radius: 15px;
 }
 
 .card-header {
-  color: var(--primary);
-  background-color: var(--dark);
+  color: #f6f0ed;
+  background-image:linear-gradient(to top, rgb(255, 255, 255) , rgb(95, 110, 114));
   padding: 1%;
-  border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
 }
 
 .card-body {
   padding: 1%;
 }
 
-/* FORM */
+
 .form-label,
 .form-input,
 .form-textarea {
   display: block;
+  font-family: unset;
 }
 
 .form-label {
@@ -200,25 +277,14 @@ input {
   padding: 1%;
   margin: 5px 0;
   font-size: 1.2rem;
-  border: 2px solid var(--light-dark);
+  border: 2px solid #7ea8be;
   border-radius: var(--border-radius);
 }
 
-/* HEIGHT / WIDTH UTILS */
 .min-100-vh {
   min-height: 100vh;
 }
 
-.min-100-vw {
-  min-width: 100vw;
-}
-
-/* FONT UTILS */
-.text-uppercase {
-  text-transform: uppercase;
-}
-
-/* FLEX CONTENT */
 .flex-row {
   display: flex;
   flex-wrap: wrap;
@@ -234,82 +300,20 @@ input {
   justify-content: space-between;
 }
 
-.justify-space-around {
-  justify-content: space-around;
-}
-
-.justify-flex-start {
-  justify-content: flex-start;
-}
-
-.justify-flex-end {
-  justify-content: flex-end;
-}
-
 .justify-center {
   justify-content: center;
-}
-
-.align-stretch {
-  align-items: stretch;
-}
-
-.align-end {
-  align-items: flex-end;
-}
-
-.align-center {
-  align-items: center;
 }
 
 .col-auto {
   flex-grow: 1;
 }
 
-.col-1 {
-  flex: 0 0 calc(100% * 1 / 12 - 2%);
-}
 
-.col-2 {
-  flex: 0 0 calc(100% * 2 / 12 - 2%);
-}
-
-.col-3 {
-  flex: 0 0 calc(100% * 3 / 12 - 2%);
-}
-
-.col-4 {
-  flex: 0 0 calc(100% * 4 / 12 - 2%);
-}
-
-.col-5 {
-  flex: 0 0 calc(100% * 5 / 12 - 2%);
-}
-
-.col-6 {
-  flex: 0 0 calc(100% * 6 / 12 - 2%);
-}
-
-.col-7 {
-  flex: 0 0 calc(100% * 7 / 12 - 2%);
-}
-
-.col-8 {
-  flex: 0 0 calc(100% * 8 / 12 - 2%);
-}
-
-.col-9 {
-  flex: 0 0 calc(100% * 9 / 12 - 2%);
-}
-
-.col-10 {
-  flex: 0 0 calc(100% * 10 / 12 - 2%);
-}
-
-.col-11 {
-  flex: 0 0 calc(100% * 11 / 12 - 2%);
-}
-
-.col-12 {
-  flex: 0 0 100%;
+/****************************** 6.0 - Footer **************************/
+.footer {
+  padding: 1em;
+  background-image:linear-gradient(to top, rgb(255, 255, 255) , rgb(95, 110, 114));
+  border-top: 1px solid black;
+  text-decoration: none;
+  bottom: 0;
 }

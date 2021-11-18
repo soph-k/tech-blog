@@ -1,3 +1,4 @@
+///////////////////////// Files /////////////////////////
 const User = require('./User');
 const Post = require('./Post');
 const Comment = require('./Comment');
@@ -17,6 +18,7 @@ Comment.belongsTo(User, {
   onDelete: 'CASCADE'
 });
 
+// Export to make available
 module.exports = {
   User,
   Comment,
