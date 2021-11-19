@@ -19,9 +19,8 @@
    
 
 # Description
-A simple script based on node.js using the inquirer - npm to generate 
-an HTML page that contains information of multiple team members. 
-Jest testing was used to anaylzed the functionality of the script.
+The Tech Blog application allows users to view blogs/posts from other user's, as well as, create, create, update and delete their own blog/post. 
+
 
 
 ## Table of Contents
@@ -41,7 +40,7 @@ Jest testing was used to anaylzed the functionality of the script.
 
 
 ## Demo
-[Demo Heroku](https://sophk-technology-blog.herokuapp.com/)
+[Demo Heroku](https://sophk-tech-blog.herokuapp.com/)
 
 
 ## Preview
@@ -59,7 +58,6 @@ Jest testing was used to anaylzed the functionality of the script.
   - Express
   - Handlebars
 - MySQL
-
 
 
 ## Installation
