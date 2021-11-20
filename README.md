@@ -19,7 +19,7 @@
    
 
 # Description
-The Tech Blog application allows users to view blogs/posts from other user's, as well as, create, create, update and delete their own blog/post. The Tech Blog is a NodeJS based application using Express, Handlebars, and Sql Databse.
+The Tech Blog application allows users to view blogs/posts from other user's, as well as, create, create, update and delete their own blog/post. The Tech Blog is a NodeJS based application using Express, Handlebars, and Sql Databse deployed on Heroku Cloud Servers.
 
 
 
